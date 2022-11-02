@@ -1,0 +1,361 @@
+{
+    "title": "",
+    "type": "pivot2",
+    "subtype": "pivot2",
+    "oid": "621ef6fdbbfbe9003555b162",
+    "desc": null,
+    "datasource": {
+        "fullname": "localhost/Foodmart",
+        "id": "localhost_aFoodmart",
+        "address": "LocalHost",
+        "database": "aFoodmart",
+        "live": false,
+        "title": "Foodmart"
+    },
+    "metadata": {
+        "ignore": {
+            "dimensions": [],
+            "ids": [],
+            "all": false
+        },
+        "panels": [
+            {
+                "name": "rows",
+                "items": [
+                    {
+                        "jaql": {
+                            "table": "Fact_売上",
+                            "column": "売上日",
+                            "dim": "[Fact_売上.売上日 (Calendar)]",
+                            "datatype": "datetime",
+                            "merged": true,
+                            "level": "quarters",
+                            "title": "Quarters 単位 売上日"
+                        },
+                        "hierarchies": [
+                            "calendar",
+                            "calendar - weeks"
+                        ],
+                        "panel": "rows",
+                        "field": {
+                            "id": "[Fact_売上.売上日 (Calendar)]_quarters",
+                            "index": 0
+                        },
+                        "format": {
+                            "mask": {
+                                "years": "yyyy",
+                                "quarters": "yyyy Q",
+                                "months": "MM/yyyy",
+                                "weeks": "ww yyyy",
+                                "days": "shortDate",
+                                "minutes": "HH:mm",
+                                "isdefault": true
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "values",
+                "items": [
+                    {
+                        "jaql": {
+                            "table": "Fact_売上",
+                            "column": "売上金額",
+                            "dim": "[Fact_売上.売上金額]",
+                            "datatype": "numeric",
+                            "agg": "sum",
+                            "title": "Total 売上金額"
+                        },
+                        "format": {
+                            "mask": {
+                                "type": "number",
+                                "t": true,
+                                "b": true,
+                                "separated": true,
+                                "decimals": "auto",
+                                "isdefault": true
+                            },
+                            "color": {
+                                "type": "color",
+                                "color": "transparent"
+                            }
+                        },
+                        "panel": "measures",
+                        "field": {
+                            "id": "[Fact_売上.売上金額]_sum",
+                            "index": 1
+                        }
+                    },
+                    {
+                        "jaql": {
+                            "table": "Fact_売上",
+                            "column": "売上数量",
+                            "dim": "[Fact_売上.売上数量]",
+                            "datatype": "numeric",
+                            "agg": "sum",
+                            "title": "Total 売上数量"
+                        },
+                        "panel": "measures",
+                        "field": {
+                            "id": "[Fact_売上.売上数量]_sum",
+                            "index": 2
+                        },
+                        "format": {
+                            "mask": {
+                                "type": "number",
+                                "t": true,
+                                "b": true,
+                                "separated": true,
+                                "decimals": "auto",
+                                "isdefault": true
+                            },
+                            "color": {
+                                "type": "color",
+                                "color": "transparent"
+                            }
+                        }
+                    },
+                    {
+                        "jaql": {
+                            "table": "Fact_売上",
+                            "column": "原価",
+                            "dim": "[Fact_売上.原価]",
+                            "datatype": "numeric",
+                            "agg": "sum",
+                            "title": "Total 原価"
+                        },
+                        "panel": "measures",
+                        "field": {
+                            "id": "[Fact_売上.原価]_sum",
+                            "index": 3
+                        },
+                        "format": {
+                            "mask": {
+                                "type": "number",
+                                "t": true,
+                                "b": true,
+                                "separated": true,
+                                "decimals": "auto",
+                                "isdefault": true
+                            },
+                            "color": {
+                                "type": "color",
+                                "color": "transparent"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "columns",
+                "items": []
+            },
+            {
+                "name": "filters",
+                "items": []
+            }
+        ]
+    },
+    "style": {
+        "scroll": false,
+        "pageSize": 25,
+        "automaticHeight": true,
+        "colors": {
+            "rows": true,
+            "columns": false,
+            "headers": false,
+            "members": false,
+            "totals": false
+        },
+        "narration": {
+            "enabled": false,
+            "display": "above",
+            "format": "bullets",
+            "verbosity": "medium",
+            "up_sentiment": "good",
+            "aggregation": "sum",
+            "labels": [
+                {
+                    "id": "quarters_単位_売上日",
+                    "title": "Quarters 単位 売上日",
+                    "singular": "Quarters 単位 売上日",
+                    "plural": "Quarters 単位 売上日"
+                }
+            ]
+        }
+    },
+    "instanceid": "E3D86-F359-91",
+    "queryStartTime": "2022-03-02T13:49:17",
+    "continuousDates": false,
+    "nullAsZero": false,
+    "hasExcessiveSeries": false,
+    "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 2,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "drillToDashboardByName": false
+    },
+    "wasRendered": false,
+    "realTimeRefreshing": false,
+    "options": {
+        "dashboardFiltersMode": "select",
+        "selector": false,
+        "triggersDomready": true,
+        "drillToAnywhere": true,
+        "autoUpdateOnEveryChange": true,
+        "interactivePivot": {
+            "enable": false
+        },
+        "aiFeatures": [
+            {
+                "id": "two-tailed_test_1574241584650",
+                "name": "Two-Tailed Test",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "perform two tailed t-test",
+                "isCustomModel": true
+            },
+            {
+                "id": "pareto_1569481451806",
+                "name": "Pareto",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Roughly 80% of the effects come from 20% of the causes",
+                "isCustomModel": true
+            },
+            {
+                "id": "growth_rate_1572222323562",
+                "name": "Growth Rates",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "refer to the percentage change of a specific variable within a specific time period and given a certain context",
+                "isCustomModel": true
+            },
+            {
+                "id": "cluster_1570673124179",
+                "name": "Clustering",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Grouping a set of objects in such a way that objects in the same group are more similar to each other than to those in other groups",
+                "isCustomModel": true
+            },
+            {
+                "id": "summary_statistics_1569425202576",
+                "name": "Summary Statistics",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Provide information about your data",
+                "isCustomModel": true
+            },
+            {
+                "id": "percentile_curves_1574252861643",
+                "name": "Percentile Curves",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Another way to show distributions",
+                "isCustomModel": true
+            },
+            {
+                "id": "anomaly",
+                "name": "Anomaly",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Outlier data points detections",
+                "isCustomModel": false
+            },
+            {
+                "id": "forecast",
+                "name": "What-If Analysis",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {
+                    "hasTargetVar": true,
+                    "targetVar": {
+                        "targetVarPaneActive": false,
+                        "sectionTitle": "Target Value",
+                        "options": [
+                            "Total 売上金額",
+                            "Total 売上数量",
+                            "Total 原価"
+                        ],
+                        "value": "Total 売上金額"
+                    }
+                },
+                "description": "Predict the future values of a 2-var-TS, one of which is the target and the\n                    second is explaining variable.\n                    Provide non-symmetric confidence-interval for the above predictions.\n                    Var-Dependence (Score) - the strength of the influence of the explaining\n                    variable on the target one.\n                    XAI (model weights etc)",
+                "isCustomModel": false
+            },
+            {
+                "id": "local_estimates",
+                "name": "Local Estimate",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Locally (using before and after time series points) estimating the mean of the time series",
+                "isCustomModel": false
+            },
+            {
+                "id": "trend",
+                "name": "Trend",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Detect (if exists) Trend-Break-Points and connect those with a trend line",
+                "isCustomModel": false
+            }
+        ]
+    },
+    "dashboardid": "6136eb8926767e003548bac1",
+    "questQueryResult": {
+        "isActive": false,
+        "isPending": false
+    },
+    "lastOpened": null,
+    "_dataSourcePermission": "none",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    }
+}

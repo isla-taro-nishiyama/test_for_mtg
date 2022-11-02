@@ -1,0 +1,46 @@
+{
+    "title": "Foodmart",
+    "desc": "",
+    "style": {
+        "name": "vivid",
+        "palette": {
+            "colors": [
+                "#00cee6",
+                "#9b9bd7",
+                "#6EDA55",
+                "#fc7570",
+                "#fbb755",
+                "#218A8C"
+            ],
+            "name": "Vivid",
+            "sortOrder": 10,
+            "isSystem": true,
+            "systemDefault": true
+        }
+    },
+    "layout": "./layout.json",
+    "oid": "6136eb8926767e003548bac1",
+    "dataExploration": false,
+    "datasource": {
+        "fullname": "localhost/Foodmart",
+        "id": "localhost_aFoodmart",
+        "address": "LocalHost",
+        "database": "aFoodmart",
+        "live": false,
+        "title": "Foodmart"
+    },
+    "filters": "./filters.json",
+    "settings": {
+        "autoUpdateOnFiltersChange": true
+    },
+    "parentFolder": null,
+    "widgets": [
+        "./widgets/620c9496b9f208003567f493/widget.json",
+        "./widgets/621ef64abbfbe9003555b14d/widget.json",
+        "./widgets/621ef657bbfbe9003555b14f/widget.json",
+        "./widgets/621ef671bbfbe9003555b155/widget.json",
+        "./widgets/621ef6a4bbfbe9003555b15b/widget.json",
+        "./widgets/621ef6fdbbfbe9003555b162/widget.json"
+    ],
+    "hierarchies": []
+}

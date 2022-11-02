@@ -1,0 +1,307 @@
+{
+    "title": "",
+    "type": "indicator",
+    "subtype": "indicator/numeric",
+    "oid": "621ef64abbfbe9003555b14d",
+    "desc": null,
+    "datasource": {
+        "title": "Foodmart",
+        "fullname": "LocalHost/Foodmart",
+        "id": "aLOCALHOST_aFOODMART",
+        "address": "LocalHost",
+        "database": "aFoodmart"
+    },
+    "metadata": {
+        "ignore": {
+            "dimensions": [],
+            "ids": [],
+            "all": false
+        },
+        "panels": [
+            {
+                "name": "value",
+                "items": [
+                    {
+                        "jaql": {
+                            "table": "Fact_売上",
+                            "column": "売上金額",
+                            "dim": "[Fact_売上.売上金額]",
+                            "datatype": "numeric",
+                            "agg": "sum",
+                            "title": "Total 売上金額"
+                        },
+                        "format": {
+                            "mask": {
+                                "abbreviations": {
+                                    "t": true,
+                                    "b": true,
+                                    "m": true,
+                                    "k": false
+                                },
+                                "decimals": "auto",
+                                "number": {
+                                    "separated": true
+                                }
+                            },
+                            "color": {
+                                "color": "#00cee6",
+                                "type": "color"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "secondary",
+                "items": []
+            },
+            {
+                "name": "min",
+                "items": []
+            },
+            {
+                "name": "max",
+                "items": []
+            },
+            {
+                "name": "filters",
+                "items": []
+            }
+        ]
+    },
+    "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+            "title": {
+                "inactive": false,
+                "enabled": true
+            },
+            "icon": {
+                "inactive": true,
+                "enabled": true
+            },
+            "secondaryTitle": {
+                "inactive": true,
+                "enabled": true
+            }
+        },
+        "narration": {
+            "enabled": false,
+            "display": "above",
+            "format": "bullets",
+            "verbosity": "medium",
+            "up_sentiment": "good",
+            "aggregation": "sum",
+            "labels": []
+        },
+        "indicator/numeric": {
+            "subtype": "simple",
+            "skin": "vertical",
+            "components": {
+                "title": {
+                    "inactive": false,
+                    "enabled": true
+                },
+                "icon": {
+                    "inactive": false,
+                    "enabled": true
+                },
+                "secondaryTitle": {
+                    "inactive": true,
+                    "enabled": true
+                }
+            }
+        },
+        "indicator/gauge": {
+            "subtype": "round",
+            "skin": "1",
+            "components": {
+                "ticks": {
+                    "inactive": false,
+                    "enabled": true
+                },
+                "labels": {
+                    "inactive": false,
+                    "enabled": true
+                },
+                "title": {
+                    "inactive": false,
+                    "enabled": true
+                },
+                "secondaryTitle": {
+                    "inactive": true,
+                    "enabled": true
+                }
+            }
+        }
+    },
+    "instanceid": "0DAF4-4A92-D7",
+    "queryStartTime": "2022-03-02T13:45:00",
+    "wasRendered": false,
+    "questQueryResult": {
+        "isActive": false,
+        "isPending": false
+    },
+    "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "drillToDashboardByName": false
+    },
+    "continuousDates": false,
+    "nullAsZero": false,
+    "realTimeRefreshing": false,
+    "options": {
+        "dashboardFiltersMode": "select",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false,
+        "aiFeatures": [
+            {
+                "id": "two-tailed_test_1574241584650",
+                "name": "Two-Tailed Test",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "perform two tailed t-test",
+                "isCustomModel": true
+            },
+            {
+                "id": "pareto_1569481451806",
+                "name": "Pareto",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Roughly 80% of the effects come from 20% of the causes",
+                "isCustomModel": true
+            },
+            {
+                "id": "growth_rate_1572222323562",
+                "name": "Growth Rates",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "refer to the percentage change of a specific variable within a specific time period and given a certain context",
+                "isCustomModel": true
+            },
+            {
+                "id": "cluster_1570673124179",
+                "name": "Clustering",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Grouping a set of objects in such a way that objects in the same group are more similar to each other than to those in other groups",
+                "isCustomModel": true
+            },
+            {
+                "id": "summary_statistics_1569425202576",
+                "name": "Summary Statistics",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Provide information about your data",
+                "isCustomModel": true
+            },
+            {
+                "id": "percentile_curves_1574252861643",
+                "name": "Percentile Curves",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Another way to show distributions",
+                "isCustomModel": true
+            },
+            {
+                "id": "anomaly",
+                "name": "Anomaly",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Outlier data points detections",
+                "isCustomModel": false
+            },
+            {
+                "id": "forecast",
+                "name": "What-If Analysis",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {
+                    "hasTargetVar": true,
+                    "targetVar": {
+                        "targetVarPaneActive": false,
+                        "sectionTitle": "Target Value",
+                        "options": [
+                            "Total 売上金額"
+                        ],
+                        "value": "Total 売上金額"
+                    }
+                },
+                "description": "Predict the future values of a 2-var-TS, one of which is the target and the\n                    second is explaining variable.\n                    Provide non-symmetric confidence-interval for the above predictions.\n                    Var-Dependence (Score) - the strength of the influence of the explaining\n                    variable on the target one.\n                    XAI (model weights etc)",
+                "isCustomModel": false
+            },
+            {
+                "id": "local_estimates",
+                "name": "Local Estimate",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Locally (using before and after time series points) estimating the mean of the time series",
+                "isCustomModel": false
+            },
+            {
+                "id": "trend",
+                "name": "Trend",
+                "isEnabled": false,
+                "isPin": false,
+                "actions": {},
+                "options": {},
+                "description": "Detect (if exists) Trend-Break-Points and connect those with a trend line",
+                "isCustomModel": false
+            }
+        ]
+    },
+    "dashboardid": "6136eb8926767e003548bac1",
+    "lastOpened": null,
+    "_dataSourcePermission": "none",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    }
+}
